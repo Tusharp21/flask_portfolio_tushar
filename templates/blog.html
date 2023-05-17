@@ -1,0 +1,53 @@
+{% extends 'basic.html' %}
+
+{% block body %}
+<!-- page header ================================================== -->
+{% set fname = 'images/blog/' + posts.img_url %}
+<section class="page-header page-hero" style="{{url_for('static', filename=fname)}}">
+
+    <div class="row page-header__content">
+        <article class="col-full">
+            <div class="page-header__info">
+                <div class="page-header__date">
+                    {{posts.date}}
+                </div>
+            </div>
+            <h1 class="page-header__title">
+                <a href="#0" title="">
+                    {{posts.title}}
+                </a>
+            </h1>
+        </article>
+    </div>
+
+</section>
+
+
+<!-- blog ================================================== -->
+<section class="blog-content-wrap">
+
+    <div class="row blog-content">
+        <div class="col-full">
+            <div class="blog-list block-1 block-tab-full">
+                <article class="col-block">
+                    <p>
+                        {{posts.posts}}
+                    </p>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <div class="row blog-entries-nav">
+        <div class="col-full">
+            <a class="btn btn--stroke smoothscroll"  href="{{ url_for('index')}}#blog" >
+                <i class="im im-arrow-left"></i>
+                Read More
+            </a>
+        </div>
+    </div>
+
+</section>
+
+
+{% endblock %}

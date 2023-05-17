@@ -1,0 +1,481 @@
+{% extends 'basic.html' %} {% block body %}
+
+<!-- home
+   ================================================== -->
+<section id="home" class="s-home page-hero target-section" data-parallax="scroll"
+  data-image-src="{{url_for('static', filename='images/hero-bg.jpg')}}" data-natural-width="3000"
+  data-natural-height="2000" data-position-y="center">
+  <div class="overlay"></div>
+  <div class="shadow-overlay"></div>
+
+  <div class="home-content">
+    <div class="row home-content__main">
+      <h3>Hello There</h3>
+
+      <h1>
+        I am Tushar Patel <br />
+        I am a Web-Developer<br />
+        Python// Django// Flask
+      </h1>
+
+      <div class="home-content__buttons">
+        <a href="#works" class="smoothscroll btn btn--stroke">
+          Latest Projects
+        </a>
+        <a href="#about" class="smoothscroll btn btn--stroke">
+          More About Me
+        </a>
+      </div>
+
+      <div class="home-content__scroll">
+        <a href="#about" class="scroll-link smoothscroll">
+          <span>Scroll Down</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- end home-content -->
+
+  <ul class="home-social">
+    <li>
+      <a href="https://www.facebook.com/tushar21"><i class="im im-facebook"
+          aria-hidden="true"></i><span>Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/tushar-patel-aa636020a/"><i class="im im-linkedin"
+          aria-hidden="true"></i><span>LinkedIn</span></a>
+    </li>
+    <li>
+      <a href="https://www.instagram.com/mr.tushar21"><i class="im im-instagram"
+          aria-hidden="true"></i><span>Instagram</span></a>
+    </li>
+    <li>
+      <a href="https://github.com/Tusharp21"><i class="im im-github" aria-hidden="true"></i><span>GitHub</span></a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/@healthandtech21"><i class="im im-youtube"
+          aria-hidden="true"></i><span>YouTube</span></a>
+    </li>
+  </ul>
+  <!-- end home-social -->
+</section>
+<!-- end s-home -->
+
+<!-- about
+    ================================================== -->
+<section id="about" class="s-about target-section">
+  <div class="row narrow section-intro has-bottom-sep">
+    <div class="col-full text-center">
+      <h3>About</h3>
+      <h1>More About Me</h1>
+      <p class="lead">
+        I have completed my Masters in Computer Science, specializing in web
+        development and software engineering. Throughout my academic journey, I
+        have gained a solid foundation in Django and Flask, two popular Python
+        frameworks for web development.
+      </p>
+    </div>
+  </div>
+
+  <div class="row about-content">
+    <div class="col-six tab-full left">
+      <h3>Education</h3>
+
+      <p style="text-align: justify">
+        I have completed my Masters in Computer Science, specializing in web
+        development and software engineering. Throughout my academic journey, I
+        have gained a solid foundation in Django and Flask, two popular Python
+        frameworks for web development.
+      </p>
+
+      <p style="text-align: justify">
+        During my studies, I undertook various projects that involved designing
+        and implementing web applications using Django and Flask. These
+        experiences have allowed me to develop a deep understanding of the
+        frameworks, their features, and best practices in web development. I am
+        particularly skilled in utilizing Django and Flask to build robust,
+        scalable, and efficient web applications. I have a strong command of
+        Python programming and have leveraged it to create dynamic and
+        interactive websites. My projects have involved working with databases ,
+        handling user authentication and authorization, integrating third-party
+        APIs, and implementing RESTful APIs. In addition to my technical
+        expertise, I am a dedicated and detail-oriented developer who takes
+        pride in writing clean and maintainable code. I am experienced in
+        working collaboratively within teams and have effective communication
+        skills that facilitate smooth project execution.
+      </p>
+    </div>
+
+    <div class="col-six tab-full right">
+      <h3>My Skills</h3>
+
+      <ul class="skill-bars">
+        <li>
+          <div class="progress percent95"><span>85%</span></div>
+          <strong>Python</strong>
+        </li>
+        <li>
+          <div class="progress percent75"><span>65%</span></div>
+          <strong>Scrapy</strong>
+        </li>
+        <li>
+          <div class="progress percent95"><span>85%</span></div>
+          <strong>Selenium WebDriver</strong>
+        </li>
+        <li>
+          <div class="progress percent95"><span>82%</span></div>
+          <strong>BeautifulSoup</strong>
+        </li>
+        <li>
+          <div class="progress percent75"><span>75%</span></div>
+          <strong>Django</strong>
+        </li>
+        <li>
+          <div class="progress percent90"><span>70%</span></div>
+          <strong>Flask</strong>
+        </li>
+        <li>
+          <div class="progress percent90"><span>80%</span></div>
+          <strong>HTML5</strong>
+        </li>
+        <li>
+          <div class="progress percent85"><span>65%</span></div>
+          <strong>CSS3</strong>
+        </li>
+        <li>
+          <div class="progress percent70"><span>50%</span></div>
+          <strong>JQuery</strong>
+        </li>
+        <li>
+          <div class="progress percent70"><span>65%</span></div>
+          <strong>Bootstrap</strong>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- end about-content -->
+
+  <div class="row about-content about-content--buttons">
+    <div class="col-six tab-full left">
+      <a href="https://drive.google.com/file/d/1UGT05x3DP6dgXE4c3_h6jRESv8K5fZJb/view?usp=share_link"
+        class="btn btn--primary full-width">Download My CV</a>
+    </div>
+    <div class="col-six tab-full right">
+      <a href="tel:+917580862955" class="btn full-width">Hire Me Now</a>
+    </div>
+  </div>
+  <!-- end about-content buttons -->
+
+  <div class="row about-content about-content--timeline">
+    <div class="col-full text-center">
+      <h3>My Work Experience.</h3>
+    </div>
+
+    <div class="col-twelve tab-full left">
+      <div class="timeline">
+
+        {% for work in work_exp %}
+        <div class="timeline__block">
+          <div class="timeline__bullet"></div>
+          <div class="timeline__header">
+            <p class="timeline__timeframe">{{work.start_date}} - {{work.end_date}}</p>
+            <h3>{{work.title}}</h3>
+            <h5>{{work.designation}}</h5>
+          </div>
+          <div class="timeline__desc">
+            <p style="text-align: justify">{{work.overview}}
+            </p>
+          </div>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+  <!-- end about-content timeline -->
+</section>
+<!-- end about -->
+
+<!-- works
+    ================================================== -->
+<section id="works" class="s-works target-section">
+  <div class="row narrow section-intro has-bottom-sep">
+    <div class="col-full">
+      <h3>Portfolio</h3>
+      <h1>My Projects</h1>
+
+      <p class="lead" style="text-align: justify">
+        My projects reflect my passion for innovation and my ability
+        to create customized solutions that meet client needs. With 
+        a strong focus on collaboration and attention to detail, I 
+        strive to exceed expectations and make a positive impact through my work.
+      </p>
+    </div>
+  </div>
+
+  <div class="row masonry-wrap">
+    <div class="masonry">
+
+
+
+      <div class="masonry__brick">
+        <div class="item-folio">
+          <div class="item-folio__thumb">
+            <a href="{{url_for('static', filename='images/portfolio/gallery/g-beetle.jpg')}}" class="thumb-link"
+              title="The Beetle Car" data-size="1050x700">
+              <img src="{{url_for('static', filename='images/portfolio/beetle.jpg')}}" srcset="
+                  {{url_for('static',filename='images/portfolio/beetle.jpg')}} 1x,
+                  {{url_for('static',filename='images/portfolio/beetle@2x.jpg')}} 2x" alt="" />
+
+              <span class="shadow-overlay"></span>
+            </a>
+          </div>
+
+          <div class="item-folio__text">
+            <h3 class="item-folio__title">The Beetle</h3>
+            <p class="item-folio__cat">Web Development</p>
+          </div>
+
+          <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+            <i class="im im-link"></i>
+          </a>
+
+          <div class="item-folio__caption">
+            <p>
+              Vero molestiae sed aut natus excepturi. Et tempora numquam.
+              Temporibus iusto quo.Unde dolorem corrupti neque nisi.
+            </p>
+          </div>
+        </div>
+        <!-- end item-folio -->
+      </div>
+
+
+      <!-- end masonry__brick -->
+    </div>
+  </div>
+  <!-- end masonry -->
+</section>
+<!-- end works -->
+
+<!-- testimonials
+    ================================================== -->
+<div class="s-testimonials">
+  <div class="overlay"></div>
+
+  <div class="row testimonials-header">
+    <div class="col-full">
+      <h1 class="h02">What People Say</h1>
+    </div>
+  </div>
+
+  <div class="row testimonials">
+    <div class="col-full testimonials__slider">
+      <div class="testimonials__slide">
+        <img src="{{url_for('static', filename='images/avatars/user-01.jpg')}}" alt="Author image"
+          class="testimonials__avatar" />
+        <p>
+          Qui ipsam temporibus quisquam velMaiores eos cumque distinctio nam
+          accusantium ipsum. Laudantium quia consequatur molestias delectus
+          culpa facere hic dolores aperiam. Accusantium quos qui praesentium
+          corpori.
+        </p>
+        <div class="testimonials__author h06">
+          Tim Cook
+          <span>CEO, Apple</span>
+        </div>
+      </div>
+
+      <div class="testimonials__slide">
+        <img src="{{url_for('static', filename='images/avatars/user-05.jpg')}}" alt="Author image"
+          class="testimonials__avatar" />
+        <p>
+          Excepturi nam cupiditate culpa doloremque deleniti repellat. Veniam
+          quos repellat voluptas animi adipisci. Nisi eaque consequatur. Quasi
+          voluptas eius distinctio. Atque eos maxime. Qui ipsam temporibus
+          quisquam vel.
+        </p>
+        <div class="testimonials__author h06">
+          Sundar Pichai
+          <span>CEO, Google</span>
+        </div>
+      </div>
+
+      <div class="testimonials__slide">
+        <img src="{{url_for('static', filename='images/avatars/user-02.jpg')}}" alt="Author image"
+          class="testimonials__avatar" />
+        <p>
+          Repellat dignissimos libero. Qui sed at corrupti expedita voluptas
+          odit. Nihil ea quia nesciunt. Ducimus aut sed ipsam. Autem eaque
+          officia cum exercitationem sunt voluptatum accusamus. Quasi voluptas
+          eius distinctio.
+        </p>
+        <div class="testimonials__author h06">
+          Satya Nadella
+          <span>CEO, Microsoft</span>
+        </div>
+      </div>
+    </div>
+    <!-- end testimonials__slider -->
+  </div>
+
+  <div class="row testimonials" style="justify-content: center">
+    <div class="col-full">
+      <a class="btn btn--stroke feedbackbtn"  href="#" >
+        Give Me Feedback
+      </a>
+    </div>
+  </div>
+  
+  <!-- end testimonials -->
+</div>
+<!-- end s-testimonials -->
+
+<!-- blog
+    ================================================== -->
+<section id="blog" class="s-blog target-section">
+  <div class="row narrow section-intro has-bottom-sep">
+    <div class="col-full">
+      <h3>Journal</h3>
+      <h1>My Blog</h1>
+      <p class="lead" style="text-align: justify">
+          I share insightful content and engaging stories.
+          Covering diverse topics, I aim to provide valuable information and 
+          perspectives. From practical tips to thought-provoking discussions, 
+          my blog offers a platform to explore and learn, fostering meaningful
+          conversations and personal growth.
+      </p>
+    </div>
+  </div>
+
+  <div class="row blog-content">
+    <div class="col-full">
+      <div class="blog-list block-1-2 block-tab-full">
+        
+        {% for post in posts %}
+
+        <article class="col-block">
+          <div class="blog-date">
+            <a href="/blog/{{post.slug}}">{{post.date}}</a>
+          </div>
+
+          <h2 class="h01">
+            <a href="/blog/{{post.slug}}">{{post.title}}</a>
+          </h2>
+          <p style="text-align: justify">{{post.posts[0:430]}}...</p>
+        </article>
+
+        {% endfor %}
+
+
+      </div>
+      <!-- end blog-list -->
+    </div>
+    <!-- end col-full -->
+  </div>
+  <!-- end blog-content -->
+</section>
+<!-- end s-blog -->
+
+<!-- s-stats
+    ================================================== -->
+<section id="stats" class="s-stats">
+  <div class="row block-1-3 block-tab-1-1 block-mob-full stats">
+    <div class="col-block stats__col">
+      <div class="stats__count">08</div>
+      <h4>Certification courses</h4>
+    </div>
+    <div class="col-block stats__col">
+      <div class="stats__count">15</div>
+      <h4>Cups of Coffee</h4>
+    </div>
+    <div class="col-block stats__col stats__col--highlight">
+      <div class="stats__upsign">
+        <a href="#"><i class="im im-arrow-up" aria-hidden="true"></i></a>
+      </div>
+      <div class="stats__count">11</div>
+      <h4>Projects Completed</h4>
+    </div>
+  </div>
+</section>
+<!-- end s-stats -->
+
+<!-- s-stats
+    ================================================== -->
+<section id="contact" class="s-contact target-section">
+  <div class="overlay"></div>
+
+  <div class="row narrow section-intro">
+    <div class="col-full">
+      <h3>Contact</h3>
+      <h1>Say Hello to Me</h1>
+
+      <p class="lead" style="text-align: justify">
+        Here, You can reach out to me for any inquiries or collaborations.
+        I value open communication and look forward to connecting with you.
+        Feel free to get in touch through the provided contact details, 
+        and I'll respond promptly.
+      </p>
+    </div>
+  </div>
+
+  <div class="row contact__main">
+    <div class="col-eight tab-full contact__form">
+
+      <form action="/send_email" method="POST">
+        <fieldset>
+          <div class="form-field">
+            <input name="contactName" type="text" id="contactName" placeholder="Name" value="" minlength="2" required=""
+              aria-required="true" class="full-width" />
+          </div>
+          <div class="form-field">
+            <input name="contactEmail" type="email" id="contactEmail" placeholder="Email" value="" required=""
+              aria-required="true" class="full-width" />
+          </div>
+          <div class="form-field">
+            <input name="contactSubject" type="text" id="contactSubject" placeholder="Subject" value=""
+              class="full-width" />
+          </div>
+          <div class="form-field">
+            <textarea name="contactMessage" id="contactMessage" placeholder="message" rows="10" cols="30" required=""
+              aria-required="true" class="full-width"></textarea>
+          </div>
+          <div class="form-field">
+            <button class="full-width btn--primary">Submit</button>
+            <div class="submit-loader">
+              <div class="text-loader">Sending...</div>
+              <div class="s-loader">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+
+      <!-- contact-warning -->
+      <div class="message-warning">{{msg}}</div>
+
+    </div>
+    <div class="col-four tab-full contact__infos">
+      <h4 class="h06">Phone</h4>
+      <p>
+        Phone: (+91) 75808-62955
+      </p>
+
+      <h4 class="h06">Email</h4>
+      <p>
+        ptushar139@gmail.com
+      </p>
+
+      <h4 class="h06">Address</h4>
+      <p>
+        Bhagwanpur, Raigarh, Chhattisgarh, (496001)
+      </p>
+    </div>
+  </div>
+</section>
+<!-- end s-contact -->
+
+{% endblock %}
